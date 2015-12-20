@@ -9,7 +9,8 @@
     tools:context=".ForecastFragment"
     tools:showIn="@layout/activity_main"
     android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#80b46a">
 
    <!-- <LinearLayout
         android:orientation="horizontal"

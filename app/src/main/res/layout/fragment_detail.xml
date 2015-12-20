@@ -18,5 +18,5 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#9a4141" />
+        android:background="#d69797" />
 </RelativeLayout>
