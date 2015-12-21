@@ -40,8 +40,10 @@ public class DetailActivityFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
         Intent intent = getActivity().getIntent();
         if(intent != null && intent.hasExtra(Intent.EXTRA_TEXT)){
-            String forecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-            ((TextView) rootView.findViewById(R.id.tv_forecast)).setText(forecastStr);
+            /*String forecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);*/
+            mForecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
+            /*((TextView) rootView.findViewById(R.id.tv_forecast)).setText(forecastStr);*/
+            ((TextView) rootView.findViewById(R.id.tv_forecast)).setText(mForecastStr);
         }
 
        /* TextView tvForecast = (TextView) rootView.findViewById(R.id.tv_forecast);
@@ -56,6 +58,7 @@ public class DetailActivityFragment extends Fragment {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         shareIntent.setType("text/plain");
+        Log.d(LOG_TAG, "----> mForecastStr: " + mForecastStr);
         shareIntent.putExtra(Intent.EXTRA_TEXT, mForecastStr + FORECAST_SHARE_HASHTAG);
         return shareIntent;
     }
